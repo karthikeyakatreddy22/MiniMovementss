@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniMoments – Gallery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .fade-in {
+        animation: fadeIn 1.5s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-[#a1c4fd] via-[#c2e9fb] to-[#fbc2eb] text-gray-800 scroll-smooth"
+  >
+    <!-- Navbar -->
+    <header class="bg-white/40 backdrop-blur-md shadow-md sticky top-0 z-40">
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-pink-700">MiniMoments</div>
+        <nav class="space-x-6 font-medium hidden md:block text-gray-800">
+          <a href="index.html" class="hover:text-pink-500">Home</a>
+          <a href="gallery.html" class="text-pink-600 font-semibold"
+            >Gallery
+          </a>
+          <a href="deals.html" class="hover:text-pink-500">Deals</a>
+          <a href="order.html" class="hover:text-pink-500">Order</a>
+          <a href="contact.html" class="hover:text-pink-500">Contact</a>
+        </nav>
+        <div class="space-x-4 text-xl text-pink-600">
+          <a href="login.html">
+            <i class="far fa-user hover:text-pink-500"></i>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Gallery Header -->
+    <section class="text-center py-16 fade-in">
+      <h1 class="text-5xl font-bold text-pink-700 mb-4">Our Moments Gallery</h1>
+      <p class="text-lg text-gray-700">
+        A glimpse of joy, love, and unforgettable memories captured in frames.
+      </p>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section
+      class="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 md:grid-cols-3 gap-8 fade-in"
+    >
+      <!-- Card 1 -->
+      <div
+        class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-500 bg-white/60 backdrop-blur-md"
+      >
+        <img
+          src="images/img.jpg"
+          alt="Frame 1"
+          class="w-full h-64 object-cover cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-pink-700">Birthday Surprise</h3>
+          <p class="text-sm text-gray-700">
+            Cherished moments from a birthday celebration.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div
+        class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-500 bg-white/60 backdrop-blur-md"
+      >
+        <img
+          src="images/img2.jpg"
+          alt="Frame 2"
+          class="w-full h-64 object-cover cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-pink-700">Wedding Bliss</h3>
+          <p class="text-sm text-gray-700">
+            A timeless frame for a timeless union.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div
+        class="rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-500 bg-white/60 backdrop-blur-md"
+      >
+        <img
+          src="images/img3.jpg"
+          alt="Frame 3"
+          class="w-full h-64 object-cover cursor-pointer"
+          onclick="openModal(this.src)"
+        />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-pink-700">Best Friends</h3>
+          <p class="text-sm text-gray-700">
+            Celebrating the magic of true friendship.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-12 text-center fade-in">
+      <h2 class="text-3xl font-bold text-pink-700 mb-4">
+        Turn Your Photos Into Keepsakes
+      </h2>
+      <a
+        href="order.html"
+        class="inline-block bg-pink-500 text-white px-6 py-3 rounded-lg hover:bg-pink-600 transition duration-300 font-semibold shadow-md"
+      >
+        Place Your Order
+      </a>
+    </section>
+
+    <!-- Image Modal -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black bg-opacity-80 hidden items-center justify-center z-50"
+    >
+      <div class="relative max-w-4xl w-full px-4">
+        <img
+          id="modalImage"
+          src=""
+          alt="Full View"
+          class="w-full max-h-[90vh] object-contain rounded-lg shadow-lg"
+        />
+        <button
+          onclick="closeModal()"
+          class="absolute top-4 right-6 text-white text-3xl hover:text-red-400"
+          aria-label="Close Modal"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white/40 backdrop-blur-md text-center py-4 mt-12 border-t border-white/30"
+    >
+      <p class="text-sm text-gray-700">
+        &copy; 2025 MiniMoments. All rights reserved.
+      </p>
+    </footer>
+
+    <!-- Modal Script -->
+    <script>
+      function openModal(src) {
+        document.getElementById("modalImage").src = src;
+        document.getElementById("imageModal").classList.remove("hidden");
+        document.getElementById("imageModal").classList.add("flex");
+      }
+
+      function closeModal() {
+        document.getElementById("imageModal").classList.add("hidden");
+        document.getElementById("imageModal").classList.remove("flex");
+      }
+
+      document
+        .getElementById("imageModal")
+        .addEventListener("click", function (e) {
+          if (e.target === this) closeModal();
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiniMoments – Deals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .fade-in {
+        animation: fadeIn 1s ease-in;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .glass {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-gradient-to-br from-indigo-400 via-purple-200 to-pink-200 min-h-screen flex flex-col"
+  >
+    <!-- Navbar -->
+    <header
+      class="bg-gradient-to-r from-purple-300/50 via-indigo-300/40 to-pink-300/50 backdrop-blur-md shadow-md sticky top-0 z-50"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div class="text-2xl font-bold text-indigo-800">MiniMoments</div>
+        <nav class="space-x-6 font-medium hidden md:block">
+          <a href="index.html" class="hover:text-indigo-500">Home</a>
+          <a href="gallery.html" class="hover:text-indigo-500">Gallery</a>
+          <a href="deals.html" class="text-indigo-700 font-semibold">Deals</a>
+          <a href="order.html" class="hover:text-indigo-500">Order</a>
+          <a href="contact.html" class="hover:text-indigo-500">Contact</a>
+        </nav>
+        <div class="text-xl">
+          <a href="login.html" class="hover:text-indigo-500"
+            ><i class="far fa-user"></i
+          ></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="flex-grow flex items-center justify-center py-16 px-4 fade-in">
+      <div class="max-w-6xl w-full glass rounded-2xl shadow-xl p-8">
+        <h1 class="text-4xl font-bold text-center text-indigo-800 mb-6">
+          ✨ Exclusive Deals ✨
+        </h1>
+        <p class="text-center text-gray-700 text-lg mb-10">
+          Don't miss out on our limited-time offers! Grab yours before they're
+          gone.
+        </p>
+
+        <!-- Countdown -->
+        <div class="text-center text-xl text-red-600 font-semibold mb-10">
+          Hurry! Offer ends in: <span id="countdown">00:00:00</span>
+        </div>
+
+        <!-- Deals Grid -->
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Deal 1 -->
+          <div
+            onclick="openModal('img4.jpg', '50% Off – Couple Frame', 'Perfect for anniversaries or weddings.', ['img4.jpg', 'img5.jpg', 'img6.jpg'])"
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
+          >
+            <img
+              src="images/img4.jpg"
+              alt="Deal 1"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-indigo-700 mb-2">
+                50% Off – Couple Frame
+              </h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Perfect for anniversaries or weddings.
+              </p>
+              <a
+                href="order.html"
+                class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+                >Order Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Deal 2 -->
+          <div
+            onclick="openModal('img5.jpg', 'Buy 2 Get 1 Free', 'Ideal for family gifts and bulk orders.', ['img5.jpg', 'img4.jpg', 'img6.jpg'])"
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
+          >
+            <img
+              src="images/img5.jpg"
+              alt="Deal 2"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-indigo-700 mb-2">
+                Buy 2 Get 1 Free
+              </h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Ideal for family gifts and bulk orders.
+              </p>
+              <a
+                href="order.html"
+                class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+                >Order Now</a
+              >
+            </div>
+          </div>
+
+          <!-- Deal 3 -->
+          <div
+            onclick="openModal('img6.jpg', 'Summer Sale Combo', 'Celebrate Summer Vibes with special frame combos.', ['img6.jpg', 'img4.jpg', 'img5.jpg'])"
+            class="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
+          >
+            <img
+              src="images/img6.jpg"
+              alt="Deal 3"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-bold text-indigo-700 mb-2">
+                Summer Sale Combo
+              </h3>
+              <p class="text-sm text-gray-600 mb-3">
+                Celebrate Summer Vibes with special frame combos.
+              </p>
+              <a
+                href="order.html"
+                class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition"
+                >Order Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white/70 backdrop-blur text-center py-4 border-t">
+      <p class="text-sm text-gray-600">
+        &copy; 2025 MiniMoments. All rights reserved.
+      </p>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-6"
+    >
+      <div class="bg-white rounded-xl max-w-3xl w-full overflow-auto">
+        <div class="flex justify-between items-center border-b p-4">
+          <h2
+            id="modalTitle"
+            class="text-xl font-semibold text-indigo-700"
+          ></h2>
+          <button
+            onclick="closeModal()"
+            class="text-gray-600 hover:text-red-500 text-2xl"
+          >
+            &times;
+          </button>
+        </div>
+        <div class="p-4">
+          <img
+            id="modalMainImg"
+            src=""
+            class="w-full h-80 object-cover rounded mb-4"
+          />
+          <p id="modalDesc" class="text-gray-600 mb-4"></p>
+          <div id="modalThumbs" class="flex gap-4"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+      function startCountdown(duration, display) {
+        let timer = duration,
+          minutes,
+          seconds;
+        setInterval(function () {
+          let hours = Math.floor(timer / 3600);
+          minutes = Math.floor((timer % 3600) / 60);
+          seconds = timer % 60;
+
+          display.textContent =
+            String(hours).padStart(2, "0") +
+            ":" +
+            String(minutes).padStart(2, "0") +
+            ":" +
+            String(seconds).padStart(2, "0");
+
+          if (--timer < 0) timer = 0;
+        }, 1000);
+      }
+
+      window.onload = function () {
+        const countdownDuration = 2 * 60 * 60;
+        const countdownDisplay = document.getElementById("countdown");
+        startCountdown(countdownDuration, countdownDisplay);
+      };
+
+      function openModal(mainImg, title, desc, images) {
+        document.getElementById("modalMainImg").src = `images/${mainImg}`;
+        document.getElementById("modalTitle").textContent = title;
+        document.getElementById("modalDesc").textContent = desc;
+
+        const thumbs = document.getElementById("modalThumbs");
+        thumbs.innerHTML = "";
+        images.forEach((img) => {
+          const thumb = document.createElement("img");
+          thumb.src = `images/${img}`;
+          thumb.className =
+            "h-20 w-28 object-cover rounded cursor-pointer hover:opacity-80 transition";
+          thumb.onclick = () => {
+            document.getElementById("modalMainImg").src = `images/${img}`;
+          };
+          thumbs.appendChild(thumb);
+        });
+
+        document.getElementById("imageModal").classList.remove("hidden");
+        document.getElementById("imageModal").classList.add("flex");
+      }
+
+      function closeModal() {
+        document.getElementById("imageModal").classList.remove("flex");
+        document.getElementById("imageModal").classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>
