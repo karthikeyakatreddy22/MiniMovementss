@@ -40,10 +40,12 @@
     <!-- Navbar -->
     <header class="bg-white/80 backdrop-blur shadow-md sticky top-0 z-50">
       <div
-        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
       >
-        <div class="text-2xl font-bold text-indigo-800">MiniMoments</div>
-        <nav class="space-x-6 font-medium hidden md:block">
+        <div class="text-xl sm:text-2xl font-bold text-indigo-800">
+          MiniMoments
+        </div>
+        <nav class="space-x-4 font-medium hidden md:flex">
           <a href="index.html" class="hover:text-indigo-500">Home</a>
           <a href="gallery.html" class="hover:text-indigo-500">Gallery</a>
           <a href="deals.html" class="hover:text-indigo-500">Deals</a>
@@ -52,7 +54,7 @@
             >Contact</a
           >
         </nav>
-        <div class="text-xl">
+        <div class="text-lg sm:text-xl">
           <a href="login.html" class="hover:text-indigo-500"
             ><i class="far fa-user"></i
           ></a>
@@ -61,53 +63,57 @@
     </header>
 
     <!-- Contact Info -->
-    <main class="flex-grow flex items-center justify-center py-16 px-4 fade-in">
-      <div class="max-w-3xl w-full glass p-10 rounded-2xl shadow-xl">
-        <h1 class="text-4xl font-bold text-indigo-800 text-center mb-6">
+    <main class="flex-grow flex items-center justify-center px-4 py-12 fade-in">
+      <div class="w-full max-w-2xl glass p-6 sm:p-10 rounded-2xl shadow-xl">
+        <h1
+          class="text-2xl sm:text-3xl font-bold text-indigo-800 text-center mb-4 sm:mb-6"
+        >
           📞 Contact Us
         </h1>
-        <p class="text-center text-gray-700 mb-10">
+        <p class="text-center text-gray-700 mb-8 text-sm sm:text-base">
           Have a question or want to connect? Reach out to us anytime!
         </p>
 
-        <div class="space-y-6 text-gray-800 text-lg">
-          <div class="flex items-center space-x-4">
-            <i class="fab fa-instagram text-pink-500 text-2xl"></i>
+        <div class="space-y-6 text-gray-800 text-base sm:text-lg">
+          <div class="flex items-center gap-3 sm:gap-4">
+            <i class="fab fa-instagram text-pink-500 text-xl sm:text-2xl"></i>
             <a
               href="https://www.instagram.com/your_insta"
               target="_blank"
-              class="hover:underline"
+              class="hover:underline break-all"
               >@your_insta</a
             >
           </div>
-          <div class="flex items-center space-x-4">
-            <i class="fab fa-whatsapp text-green-500 text-2xl"></i>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <i class="fab fa-whatsapp text-green-500 text-xl sm:text-2xl"></i>
             <a
               href="https://wa.me/your_number"
               target="_blank"
-              class="hover:underline"
+              class="hover:underline break-all"
               >+91 9876543210</a
             >
           </div>
-          <div class="flex items-center space-x-4">
-            <i class="fas fa-envelope text-indigo-500 text-2xl"></i>
-            <a href="mailto:you@example.com" class="hover:underline"
+          <div class="flex items-center gap-3 sm:gap-4">
+            <i class="fas fa-envelope text-indigo-500 text-xl sm:text-2xl"></i>
+            <a href="mailto:you@example.com" class="hover:underline break-all"
               >minimoments33@gmail.com</a
             >
           </div>
-          <div class="flex items-center space-x-4">
-            <i class="fas fa-map-marker-alt text-red-500 text-2xl"></i>
-            <span>Bhimavaram, India</span>
+          <div class="flex items-center gap-3 sm:gap-4">
+            <i
+              class="fas fa-map-marker-alt text-red-500 text-xl sm:text-2xl"
+            ></i>
+            <span class="break-words">Bhimavaram, India</span>
           </div>
         </div>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white/70 backdrop-blur text-center py-4 border-t">
-      <p class="text-sm text-gray-600">
-        &copy; 2025 MiniMoments. All rights reserved.
-      </p>
+    <footer
+      class="bg-white/70 backdrop-blur text-center py-4 border-t text-sm text-gray-600"
+    >
+      &copy; 2025 MiniMoments. All rights reserved.
     </footer>
   </body>
 </html>

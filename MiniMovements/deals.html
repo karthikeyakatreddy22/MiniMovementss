@@ -42,7 +42,7 @@
       class="bg-gradient-to-r from-purple-300/50 via-indigo-300/40 to-pink-300/50 backdrop-blur-md shadow-md sticky top-0 z-50"
     >
       <div
-        class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center"
+        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
       >
         <div class="text-2xl font-bold text-indigo-800">MiniMoments</div>
         <nav class="space-x-6 font-medium hidden md:block">
@@ -61,24 +61,30 @@
     </header>
 
     <!-- Page Content -->
-    <main class="flex-grow flex items-center justify-center py-16 px-4 fade-in">
-      <div class="max-w-6xl w-full glass rounded-2xl shadow-xl p-8">
-        <h1 class="text-4xl font-bold text-center text-indigo-800 mb-6">
+    <main class="flex-grow flex items-center justify-center py-12 px-4 fade-in">
+      <div class="max-w-6xl w-full glass rounded-2xl shadow-xl p-6 sm:p-8">
+        <h1
+          class="text-3xl sm:text-4xl font-bold text-center text-indigo-800 mb-4 sm:mb-6"
+        >
           ✨ Exclusive Deals ✨
         </h1>
-        <p class="text-center text-gray-700 text-lg mb-10">
+        <p class="text-center text-gray-700 text-base sm:text-lg mb-6 sm:mb-10">
           Don't miss out on our limited-time offers! Grab yours before they're
           gone.
         </p>
 
         <!-- Countdown -->
-        <div class="text-center text-xl text-red-600 font-semibold mb-10">
+        <div
+          class="text-center text-base sm:text-xl text-red-600 font-semibold mb-8 sm:mb-10"
+        >
           Hurry! Offer ends in: <span id="countdown">00:00:00</span>
         </div>
 
         <!-- Deals Grid -->
-        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <!-- Deal 1 -->
+        <div
+          class="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          <!-- Deal Cards -->
           <div
             onclick="openModal('img4.jpg', '50% Off – Couple Frame', 'Perfect for anniversaries or weddings.', ['img4.jpg', 'img5.jpg', 'img6.jpg'])"
             class="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
@@ -86,10 +92,10 @@
             <img
               src="images/img4.jpg"
               alt="Deal 1"
-              class="w-full h-64 object-cover"
+              class="w-full h-56 sm:h-64 object-cover"
             />
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-indigo-700 mb-2">
+            <div class="p-4 sm:p-3">
+              <h3 class="text-base sm:text-lg font-bold text-indigo-700 mb-2">
                 50% Off – Couple Frame
               </h3>
               <p class="text-sm text-gray-600 mb-3">
@@ -103,7 +109,6 @@
             </div>
           </div>
 
-          <!-- Deal 2 -->
           <div
             onclick="openModal('img5.jpg', 'Buy 2 Get 1 Free', 'Ideal for family gifts and bulk orders.', ['img5.jpg', 'img4.jpg', 'img6.jpg'])"
             class="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
@@ -111,10 +116,10 @@
             <img
               src="images/img5.jpg"
               alt="Deal 2"
-              class="w-full h-64 object-cover"
+              class="w-full h-56 sm:h-64 object-cover"
             />
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-indigo-700 mb-2">
+            <div class="p-4 sm:p-3">
+              <h3 class="text-base sm:text-lg font-bold text-indigo-700 mb-2">
                 Buy 2 Get 1 Free
               </h3>
               <p class="text-sm text-gray-600 mb-3">
@@ -128,7 +133,6 @@
             </div>
           </div>
 
-          <!-- Deal 3 -->
           <div
             onclick="openModal('img6.jpg', 'Summer Sale Combo', 'Celebrate Summer Vibes with special frame combos.', ['img6.jpg', 'img4.jpg', 'img5.jpg'])"
             class="bg-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300 cursor-pointer"
@@ -136,10 +140,10 @@
             <img
               src="images/img6.jpg"
               alt="Deal 3"
-              class="w-full h-64 object-cover"
+              class="w-full h-56 sm:h-64 object-cover"
             />
-            <div class="p-4">
-              <h3 class="text-lg font-bold text-indigo-700 mb-2">
+            <div class="p-4 sm:p-3">
+              <h3 class="text-base sm:text-lg font-bold text-indigo-700 mb-2">
                 Summer Sale Combo
               </h3>
               <p class="text-sm text-gray-600 mb-3">
@@ -166,13 +170,15 @@
     <!-- Modal -->
     <div
       id="imageModal"
-      class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-6"
+      class="fixed inset-0 bg-black/70 hidden items-center justify-center z-50 p-4"
     >
-      <div class="bg-white rounded-xl max-w-3xl w-full overflow-auto">
+      <div
+        class="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto"
+      >
         <div class="flex justify-between items-center border-b p-4">
           <h2
             id="modalTitle"
-            class="text-xl font-semibold text-indigo-700"
+            class="text-lg sm:text-xl font-semibold text-indigo-700"
           ></h2>
           <button
             onclick="closeModal()"
@@ -181,14 +187,14 @@
             &times;
           </button>
         </div>
-        <div class="p-4">
+        <div class="p-4 sm:p-3">
           <img
             id="modalMainImg"
             src=""
-            class="w-full h-80 object-cover rounded mb-4"
+            class="w-full h-64 sm:h-80 object-cover rounded mb-4"
           />
-          <p id="modalDesc" class="text-gray-600 mb-4"></p>
-          <div id="modalThumbs" class="flex gap-4"></div>
+          <p id="modalDesc" class="text-gray-600 mb-4 text-sm sm:text-base"></p>
+          <div id="modalThumbs" class="flex gap-4 flex-wrap"></div>
         </div>
       </div>
     </div>
@@ -232,7 +238,7 @@
           const thumb = document.createElement("img");
           thumb.src = `images/${img}`;
           thumb.className =
-            "h-20 w-28 object-cover rounded cursor-pointer hover:opacity-80 transition";
+            "h-16 sm:h-20 w-20 object-cover rounded cursor-pointer hover:opacity-80 transition";
           thumb.onclick = () => {
             document.getElementById("modalMainImg").src = `images/${img}`;
           };
